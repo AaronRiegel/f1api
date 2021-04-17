@@ -6,10 +6,20 @@ module.exports = (function () {
   var season = require('../models/season');
 
 
-  // Calendar route
+
+
+  //Generic Calendar route
   router.get('/calendar', function (req, res) {
     season.getCalendar().then(data => {
-      //console.log(`Printing data: ${data}`);
+
+      res.send(data);
+    });
+  }); 
+
+  //Specific Round route
+  router.get('/calendar/:round', function (req, res) {
+    season.getCalendar(req.params.round).then(data => {
+
       res.send(data);
     });
   });
