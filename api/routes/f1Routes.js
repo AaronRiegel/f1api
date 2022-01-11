@@ -14,6 +14,8 @@ module.exports = (function () {
 
       res.send(data);
     });
+
+    console.log("Hello from the route.");
   }); 
 
   //Specific Round route
