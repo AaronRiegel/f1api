@@ -1,11 +1,10 @@
+const season = require("../models/season");
 module.exports = (function () {
   'use strict';
 
-  var express = require('express');
-  var router = express.Router();
-  var season = require('../models/season');
-
-
+  const express = require('express');
+  const router = express.Router();
+  const season = require('../models/season');
 
 
   //Generic Calendar route
@@ -21,6 +20,14 @@ module.exports = (function () {
   //Specific Round route
   router.get('/calendar/:round', function (req, res) {
     season.getCalendar(req.params.round).then(data => {
+
+      res.send(data);
+    });
+  });
+
+  //Historic Round route
+  router.get('/historic', function (req, res) {
+    season.getHistoricCalendar(req.params.round).then(data => {
 
       res.send(data);
     });

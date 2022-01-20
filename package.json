@@ -5,12 +5,15 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "startAndCache": "nodemon server.js --preCache true"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "got": "^11.8.2"
+    "got": "^11.8.2",
+    "minimist": "^1.2.5",
+    "node-cache": "^5.1.2"
   }
 }
